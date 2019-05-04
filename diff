@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+var osi = require('spdx-osi')
+var blueoak = require('@blueoak/list')
+
+blueoak.forEach(function (element) {
+  element.licenses.forEach(function (license) {
+    var id = license.id
+    if (!osi.includes(id)) {
+      console.log(id)
+    }
+  })
+})
